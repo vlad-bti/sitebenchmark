@@ -33,6 +33,8 @@ func GetSitesData(ctx *gin.Context) {
 
 	maxUrl := service.Mgr().BenchmarkCenterService().GetMaxUrl()
 	ch := make(chan int, 10)
+	defer close(ch)
+
 	numGoroutine := 0
 	for k, item := range resp.Items {
 		if k >= maxUrl {

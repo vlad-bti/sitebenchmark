@@ -166,6 +166,8 @@ func (c *benchmarkCenter) TestUrl(ctx context.Context, url string, numGoroutine 
 	defer cancel()
 
 	ch := make(chan int, 10)
+	defer close(ch)
+
 	for i := 0; i < numGoroutine; i++ {
 		go func(ch chan int, ctx context.Context) {
 			var netClient = &http.Client{
