@@ -1,0 +1,13 @@
+server:
+  host: "localhost"
+  port: 8080
+
+handler:
+  max_response_time: 29
+  max_site_response_time: 3
+  max_url: 50
+  max_error: 0
+  num_goroutine_list:
+    - 10
+    - 50
+    - 150
