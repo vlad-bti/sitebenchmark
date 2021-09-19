@@ -8,6 +8,7 @@ handler:
   max_url: 50
   max_error: 0
   num_goroutine_list:
+    - 1
     - 10
     - 50
     - 150
